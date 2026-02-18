@@ -2,7 +2,7 @@
   "name": "media-hub",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://geodome21.github.io/forksnfrogz/",
+  "homepage": "https://geodome21.github.io/forksnfrogz",
   "dependencies": {
     "framer-motion": "^10.12.16",
     "react": "^18.0.0",
