@@ -1,5 +1,5 @@
 const games = [
-  { title: "Game 1", image: "images/Deltarune", url: "https://example.com" },
+  { title: "Deltarune", image: "images/Deltarune.png", url: "https://example.com" },
   { title: "Game 2", image: "https://source.unsplash.com/900x700/?arcade", url: "https://example.com" },
   { title: "Game 3", image: "https://source.unsplash.com/900x700/?car,game", url: "https://example.com" },
   { title: "Game 4", image: "https://source.unsplash.com/900x700/?retro", url: "https://example.com" },
