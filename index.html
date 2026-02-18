@@ -1,160 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Hub</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: white;
-      padding: 40px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Hub</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+    padding: 40px;
+  }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      animation: fadeDown 0.8s ease;
-    }
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeDown 0.8s ease;
+  }
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    .search-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
 
-    input {
-      padding: 16px;
-      width: 500px;
-      font-size: 18px;
-      border-radius: 12px;
-      border: 1px solid #333;
-      background: #1f1f1f;
-      color: white;
-    }
+  input {
+    padding: 16px;
+    width: 500px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: #1f1f1f;
+    color: white;
+  }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 
-    .card {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #1f1f1f;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
+  .card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1f1f1f;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
 
-    .card:hover {
-      transform: scale(1.05);
-    }
+  .card:hover {
+    transform: scale(1.05);
+  }
 
-    .card img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
+  .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
 
-    .card:hover img {
-      transform: scale(1.08);
-    }
+  .card:hover img {
+    transform: scale(1.08);
+  }
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 12px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-    .card:hover .overlay {
-      opacity: 1;
-    }
+  .card:hover .overlay {
+    opacity: 1;
+  }
 
-    .overlay button {
-      width: 100%;
-      padding: 8px;
-      background: #6b46c1;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+  .overlay button {
+    width: 100%;
+    padding: 8px;
+    background: #6b46c1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 
-    /* iframe viewer styles */
-    .viewer {
-      position: fixed;
-      inset: 0;
-      background: #111;
-      display: flex;
-      flex-direction: column;
-      z-index: 999;
-      animation: fadeIn 0.3s ease;
-    }
+  /* iframe viewer */
+  .viewer {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+  }
 
-    .viewer.hidden {
-      display: none;
-    }
+  .viewer.hidden {
+    display: none;
+  }
 
-    .viewer-header {
-      padding: 10px;
-      background: #1a1a1a;
-      text-align: right;
-    }
+  .viewer-header {
+    padding: 10px;
+    background: #1a1a1a;
+    text-align: right;
+  }
 
-    .viewer-header button {
-      background: #6b46c1;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      color: white;
-      cursor: pointer;
-    }
+  .viewer-header button {
+    background: #6b46c1;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+  }
 
-    #gameFrame {
-      flex: 1;
-      border: none;
-      width: 100%;
-    }
+  #gameFrame {
+    flex: 1;
+    border: none;
+    width: 100%;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
 </head>
 <body>
-  <h1>Media Hub</h1>
 
-  <div class="search-container">
-    <input type="text" id="search" placeholder="Search...">
+<h1>Media Hub</h1>
+
+<div class="search-container">
+  <input type="text" id="search" placeholder="Search...">
+</div>
+
+<div class="grid" id="gameGrid"></div>
+
+<!-- iframe viewer -->
+<div id="viewer" class="viewer hidden">
+  <div class="viewer-header">
+    <button id="closeViewer">✕ Close</button>
   </div>
+  <iframe id="gameFrame"></iframe>
+</div>
 
-  <div class="grid" id="gameGrid"></div>
-
-  <!-- iframe viewer -->
-  <div id="viewer" class="viewer hidden">
-    <div class="viewer-header">
-      <button id="closeViewer">✕ Close</button>
-    </div>
-    <iframe id="gameFrame"></iframe>
-  </div>
-
-  <script src="index.js"></script>
+<script src="index.js"></script>
 </body>
 </html>

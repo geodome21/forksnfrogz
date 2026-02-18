@@ -1,11 +1,9 @@
-// Local games
+// Your local games are just HTML files in the root (or a folder)
 const games = [
-  { title: "Deltarune", image: "images/Deltarune.png", url: "https://example.com" },
-  { title: "Game 2", image: "images/game2.jpg", url: "https://example.com" },
-  { title: "Game 3", image: "images/game3.jpg", url: "https://example.com" },
-  { title: "Game 4", image: "images/game4.jpg", url: "https://example.com" },
-  { title: "Game 5", image: "images/game5.jpg", url: "https://example.com" },
-  { title: "Game 6", image: "images/game6.jpg", url: "https://example.com" }
+  { title: "Game 1", image: "images/game1.png", file: "game1.html" },
+  { title: "Game 2", image: "images/game2.png", file: "game2.html" },
+  { title: "Game 3", image: "images/game3.png", file: "game3.html" },
+  { title: "Game 4", image: "images/game4.png", file: "game4.html" }
 ];
 
 const grid = document.getElementById("gameGrid");
@@ -14,6 +12,7 @@ const viewer = document.getElementById("viewer");
 const frame = document.getElementById("gameFrame");
 const closeBtn = document.getElementById("closeViewer");
 
+// Render the grid
 function renderGames(filter = "") {
   grid.innerHTML = "";
 
@@ -33,18 +32,20 @@ function renderGames(filter = "") {
 
       grid.appendChild(card);
 
-      // Play button opens iframe
+      // Play button opens the game HTML in iframe
       card.querySelector(".play-btn").addEventListener("click", () => {
-        openGame(game.url);
+        openGame(game.file);
       });
     });
 }
 
-function openGame(url) {
-  frame.src = url;
+// Open game in iframe
+function openGame(file) {
+  frame.src = file;   // load the local HTML file
   viewer.classList.remove("hidden");
 }
 
+// Close iframe
 closeBtn.addEventListener("click", () => {
   frame.src = "";
   viewer.classList.add("hidden");
