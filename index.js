@@ -1,14 +1,18 @@
+// Local games
 const games = [
-  { title: "Deltarune", image: "images/deltarune.png", url: "games/deltarune/index.html" },
-  { title: "Game 2", image: "https://source.unsplash.com/900x700/?arcade", url: "https://example.com" },
-  { title: "Game 3", image: "https://source.unsplash.com/900x700/?car,game", url: "https://example.com" },
-  { title: "Game 4", image: "https://source.unsplash.com/900x700/?retro", url: "https://example.com" },
-  { title: "Game 5", image: "https://source.unsplash.com/900x700/?puzzle", url: "https://example.com" },
-  { title: "Game 6", image: "https://source.unsplash.com/900x700/?adventure", url: "https://example.com" }
+  { title: "Deltarune", image: "images/Deltarune.png", url: "https://example.com" },
+  { title: "Game 2", image: "images/game2.jpg", url: "https://example.com" },
+  { title: "Game 3", image: "images/game3.jpg", url: "https://example.com" },
+  { title: "Game 4", image: "images/game4.jpg", url: "https://example.com" },
+  { title: "Game 5", image: "images/game5.jpg", url: "https://example.com" },
+  { title: "Game 6", image: "images/game6.jpg", url: "https://example.com" }
 ];
 
 const grid = document.getElementById("gameGrid");
 const searchInput = document.getElementById("search");
+const viewer = document.getElementById("viewer");
+const frame = document.getElementById("gameFrame");
+const closeBtn = document.getElementById("closeViewer");
 
 function renderGames(filter = "") {
   grid.innerHTML = "";
@@ -23,16 +27,33 @@ function renderGames(filter = "") {
         <img src="${game.image}" alt="${game.title}">
         <div class="overlay">
           <h2>${game.title}</h2>
-          <button onclick="window.open('${game.url}', '_blank')">Play</button>
+          <button class="play-btn">Play</button>
         </div>
       `;
 
       grid.appendChild(card);
+
+      // Play button opens iframe
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        openGame(game.url);
+      });
     });
 }
 
+function openGame(url) {
+  frame.src = url;
+  viewer.classList.remove("hidden");
+}
+
+closeBtn.addEventListener("click", () => {
+  frame.src = "";
+  viewer.classList.add("hidden");
+});
+
+// Search functionality
 searchInput.addEventListener("input", (e) => {
   renderGames(e.target.value);
 });
 
+// Initial render
 renderGames();
