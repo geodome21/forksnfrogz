@@ -1,7 +1,7 @@
 // Your local games are just HTML files in the root (or a folder)
 const games = [
   { title: "Deltarune", image: "images/Deltarune.png", file: "games/deltarune/index.html" },
-  { title: "Celeste", image: "images/Celeste.png", file: "games/celeste/index.html" },
+  { title: "Celeste", image: "images/celeste.png", file: "games/Celeste/index.html" },
   { title: "Game 3", image: "images/game3.png", file: "game3.html" },
   { title: "Game 4", image: "images/game4.png", file: "game4.html" }
 ];
