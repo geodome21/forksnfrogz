@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ruffle SWF Player</title>
+    <title>Fullscreen Ruffle SWF Player</title>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        html, body {
             margin: 0;
-            background-color: #222;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
         }
         #player {
-            width: 800px;
-            height: 600px;
-            border: 2px solid #fff;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -32,8 +31,8 @@
         // Attach the player to the container
         document.getElementById("player").appendChild(player);
 
-        // Load your SWF file here
-        player.load("games/binding of issac/BOI.swf"); // <-- Replace "your_file.swf" with your SWF path
+        // Load your SWF file (replace with your file path)
+        player.load("games/binding of issac/BOI.swf"); // <-- Replace this with your SWF
     </script>
 </body>
 </html>
