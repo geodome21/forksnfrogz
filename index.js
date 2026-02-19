@@ -2,8 +2,9 @@
 const games = [
   { title: "Deltarune", image: "images/Deltarune.png", file: "games/deltarune/index.html" },
   { title: "Hollow Knight", image: "images/hollow knight.png", file: "games/Hollow Knight/index.html" },
-  { title: "Game 3", image: "images/game3.png", file: "game3.html" },
+  { title: "Binding Of Issac", image: "images/BOF.png", file: "games/binding of issac/index.html" },
   { title: "Game 4", image: "images/game4.png", file: "game4.html" }
+  { title: "Game 5", image: "images/game5.png", file: "game5.html" }
 ];
 
 const grid = document.getElementById("gameGrid");

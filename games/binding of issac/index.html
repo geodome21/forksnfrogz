@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ruffle SWF Player</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+        }
+        #player {
+            width: 800px;
+            height: 600px;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ruffle player container -->
+    <div id="player"></div>
+
+    <script>
+        // Create a Ruffle instance
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+
+        // Attach the player to the container
+        document.getElementById("player").appendChild(player);
+
+        // Load your SWF file here
+        player.load("games/binding of issac/The Binding of Issac.swf"); // <-- Replace "your_file.swf" with your SWF path
+    </script>
+</body>
+</html>
