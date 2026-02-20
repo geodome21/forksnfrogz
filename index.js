@@ -1,13 +1,14 @@
 let tab="games"
 let cat="all"
 
-const gameCategories=["all","action","rpg","puzzle","fighting","fps","driving"]
+const gameCategories=["all","rpg","puzzle","fighting","shooter","driving"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
 {title:"Bad Time Simulator",img:"images/Sans.jpeg",url:"games/Bad Time Simulator/index.html",cat:"fighting,"},
-{title:"Escape Road 2",img:"images/escape road 2.jpeg",url:"games/Escape Road 2/index.html",cat:"driving,action"},
-{title:"SuperHot",img:"images/superhot.jpeg",url:"games/SuperHot/index.html",cat:"action,fps"}
+{title:"Escape Road 2",img:"images/escape road 2.jpeg",url:"games/Escape Road 2/index.html",cat:"driving,"},
+{title:"Polytrack",img:"images/polytrack.jpeg",url:"games/Polytrack/index.html",cat:"driving,"},
+{title:"SuperHot",img:"images/superhot.jpeg",url:"games/SuperHot/index.html",cat:"shooter,"}
 ]
 
 const movies=[
