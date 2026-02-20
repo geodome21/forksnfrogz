@@ -158,9 +158,4 @@ color:white;
 cursor:pointer;
 }
 
-.performance-mode *{
-animation:none!important;
-transition:none!important;
-}
-
 .hidden{display:none;}

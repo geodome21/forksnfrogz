@@ -14,14 +14,6 @@
 --accent:#6b8cff;
 }
 
-@media (prefers-color-scheme: light){
-:root{
---bg:#eaeaea;
---card:#fff;
---text:#111;
-}
-}
-
 body{
 margin:0;
 background:var(--bg);
@@ -74,7 +66,7 @@ background:var(--accent);
 
 .search{
 padding:14px;
-width:350px;
+width:550px;
 border-radius:10px;
 border:none;
 background:rgba(255,255,255,0.06);
@@ -87,15 +79,14 @@ color:var(--text);
 
 .filter-btn{
 padding:10px 18px;
-background:linear-gradient(180deg,
-rgba(255,255,255,0.08),
-rgba(255,255,255,0.02));
+background:#4a4a4a;
+color:#ffffff;
 border-radius:10px;
 cursor:pointer;
-border:1px solid rgba(255,255,255,0.08);
+border:none;
 backdrop-filter:blur(6px);
 transition:.25s;
-box-shadow:0 4px 12px rgba(0,0,0,0.3);
+box-shadow:none;
 }
 
 .filter-btn:hover{
@@ -179,6 +170,7 @@ opacity:0;
 display:flex;
 flex-direction:column;
 justify-content:flex-end;
+align-items:center;
 padding:10px;
 transition:.3s;
 }
@@ -188,10 +180,11 @@ transition:.3s;
 .play{
 background:var(--accent);
 border:none;
-padding:6px;
-width:100%;
+padding:8px 112px;
 border-radius:6px;
 color:#fff;
+cursor:pointer;
+text-align:center;
 }
 
 /* Player */
@@ -227,11 +220,6 @@ background:#000c;
 backdrop-filter:blur(10px);
 display:none;
 padding:10px;
-}
-
-.lowPerf *{
-animation:none !important;
-transition:none !important;
 }
 
 </style>
@@ -274,11 +262,6 @@ id="filterMenu"></div>
 
 <div class="secret" id="secret">
 <h3>Settings</h3>
-<label>
-<input type="checkbox"
-onchange="perf(this)">
-Performance Mode
-</label>
 </div>
 
 <script src="index.js"></script>

@@ -1,12 +1,12 @@
 let tab="games"
 let cat="all"
 
-const gameCategories=["all","action","rpg","puzzle"]
+const gameCategories=["all","action","rpg","puzzle","fighting","fps"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
-{title:"Deltarune",img:"images/Deltarune.png",url:"games/delta.html",cat:"rpg"},
-{title:"Slope",img:"images/slope.png",url:"games/slope.html",cat:"action"}
+{title:"Bad Time Simulator",img:"images/Sans.jpeg",url:"games/Bad Time Simulator/index.html",cat:"fighting"},
+{title:"SuperHot",img:"images/superhot.jpeg",url:"games/SuperHot/index.html",cat:"action,fps"}
 ]
 
 const movies=[
@@ -51,7 +51,7 @@ let s=search.value.toLowerCase()
 grid.innerHTML=""
 list.filter(x=>
 x.title.toLowerCase().includes(s)&&
-(cat=="all"||x.cat==cat)
+(cat=="all"||x.cat.split(",").includes(cat))
 ).forEach(x=>{
 grid.innerHTML+=`
 <div class="card"
@@ -79,19 +79,12 @@ function full(){
 frame.requestFullscreen()
 }
 
-function perf(x){
-if(x.checked)
-document.body.classList.add("lowPerf")
-else
-document.body.classList.remove("lowPerf")
-}
-
+// switch secret settings using period key instead of F6
 document.addEventListener("keydown",e=>{
-if(e.key=="F6"){
-secret.style.display=
-secret.style.display=="block"?"none":"block"
-}
-})
-
+  if(e.key=="."){
+    secret.style.display=
+      secret.style.display=="block"?"none":"block";
+  }
+});
 loadCategories()
 render()
