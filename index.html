@@ -1,161 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Geo Games</title>
+
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #121212;
-    color: white;
-    padding: 40px;
-  }
 
-  h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    animation: fadeDown 0.8s ease;
-  }
+:root{
+--bg:#0f1115;
+--card:#1a1e26;
+--text:#fff;
+--accent:#6b8cff;
+}
 
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+@media (prefers-color-scheme: light){
+:root{
+--bg:#eaeaea;
+--card:#fff;
+--text:#111;
+}
+}
 
-  .search-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:Segoe UI;
+overflow-x:hidden;
+}
 
-  input {
-    padding: 16px;
-    width: 500px;
-    font-size: 18px;
-    border-radius: 12px;
-    border: 1px solid #333;
-    background: #1f1f1f;
-    color: white;
-  }
+/* Animated Background */
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:linear-gradient(45deg,#1a1f2b,#141821,#1a1f2b);
+animation:bgMove 30s linear infinite;
+z-index:-1;
+}
 
-  .card {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #1f1f1f;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
+@keyframes bgMove{
+0%{transform:translate(0,0);}
+50%{transform:translate(-20%,-20%);}
+100%{transform:translate(0,0);}
+}
 
-  .card:hover {
-    transform: scale(1.05);
-  }
+/* Topbar */
 
-  .card img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
+.topbar{
+display:flex;
+gap:12px;
+justify-content:center;
+padding:20px;
+flex-wrap:wrap;
+}
 
-  .card:hover img {
-    transform: scale(1.08);
-  }
+.tab{
+padding:10px 20px;
+border-radius:10px;
+cursor:pointer;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+transition:.25s;
+backdrop-filter:blur(6px);
+}
 
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+.tab.active{
+background:var(--accent);
+}
 
-  .card:hover .overlay {
-    opacity: 1;
-  }
+.search{
+padding:14px;
+width:350px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.06);
+color:var(--text);
+}
 
-  .overlay button {
-    width: 100%;
-    padding: 8px;
-    background: #6b46c1;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
+/* Filter */
 
-  /* iframe viewer */
-  .viewer {
-    position: fixed;
-    inset: 0;
-    background: #111;
-    display: flex;
-    flex-direction: column;
-    z-index: 999;
-    animation: fadeIn 0.3s ease;
-  }
+.filter-container{position:relative;}
 
-  .viewer.hidden {
-    display: none;
-  }
+.filter-btn{
+padding:10px 18px;
+background:linear-gradient(180deg,
+rgba(255,255,255,0.08),
+rgba(255,255,255,0.02));
+border-radius:10px;
+cursor:pointer;
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(6px);
+transition:.25s;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
 
-  .viewer-header {
-    padding: 10px;
-    background: #1a1a1a;
-    text-align: right;
-  }
+.filter-btn:hover{
+transform:translateY(-2px) scale(1.05);
+}
 
-  .viewer-header button {
-    background: #6b46c1;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-  }
+.filter-menu{
+position:absolute;
+top:120%;
+right:0;
+width:200px;
+background:linear-gradient(
+180deg,
+rgba(30,30,40,0.75),
+rgba(20,20,30,0.6));
+border-radius:12px;
+padding:8px;
+opacity:0;
+pointer-events:none;
+transform:translateY(10px);
+transition:.25s;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+border:1px solid rgba(255,255,255,0.08);
+}
 
-  #gameFrame {
-    flex: 1;
-    border: none;
-    width: 100%;
-  }
+.filter-menu.show{
+opacity:1;
+pointer-events:all;
+transform:translateY(0);
+}
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+.filter-option{
+padding:10px;
+border-radius:8px;
+cursor:pointer;
+transition:.2s;
+}
+
+.filter-option:hover{
+background:rgba(255,255,255,0.12);
+transform:translateX(4px);
+}
+
+/* Grid */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:20px;
+}
+
+/* 16:9 Cards */
+
+.card{
+position:relative;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+transition:.25s;
+aspect-ratio:16/9;
+}
+
+.card:hover{transform:scale(1.04);}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+opacity:0;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding:10px;
+transition:.3s;
+}
+
+.card:hover .overlay{opacity:1;}
+
+.play{
+background:var(--accent);
+border:none;
+padding:6px;
+width:100%;
+border-radius:6px;
+color:#fff;
+}
+
+/* Player */
+
+#player{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:none;
+flex-direction:column;
+z-index:999;
+}
+
+iframe{flex:1;border:none;}
+
+.controls{
+display:flex;
+justify-content:space-between;
+padding:6px;
+background:#111;
+}
+
+.secret{
+position:fixed;
+top:0;
+right:0;
+width:250px;
+height:100%;
+background:#000c;
+backdrop-filter:blur(10px);
+display:none;
+padding:10px;
+}
+
+.lowPerf *{
+animation:none !important;
+transition:none !important;
+}
+
 </style>
 </head>
+
 <body>
 
-<h1>Geo Games</h1>
+<div class="topbar">
 
-<div class="search-container">
-  <input type="text" id="search" placeholder="Search...">
+<div class="tab active" id="gamesTab"
+onclick="switchTab('games')">Games</div>
+
+<div class="tab" id="moviesTab"
+onclick="switchTab('movies')">Movies</div>
+
+<input class="search" id="search"
+placeholder="Search..."
+oninput="render()">
+
+<div class="filter-container">
+<button class="filter-btn"
+onclick="toggleFilter()">Filter</button>
+
+<div class="filter-menu"
+id="filterMenu"></div>
+
 </div>
 
-<div class="grid" id="gameGrid"></div>
+</div>
 
-<!-- iframe viewer -->
-<div id="viewer" class="viewer hidden">
-  <div class="viewer-header">
-    <button id="closeViewer">✕ Close</button>
-  </div>
-  <iframe id="gameFrame"></iframe>
+<div class="grid" id="grid"></div>
+
+<div id="player">
+<div class="controls">
+<button onclick="closeGame()">Close</button>
+<button onclick="full()">Fullscreen</button>
+</div>
+<iframe id="frame"></iframe>
+</div>
+
+<div class="secret" id="secret">
+<h3>Settings</h3>
+<label>
+<input type="checkbox"
+onchange="perf(this)">
+Performance Mode
+</label>
 </div>
 
 <script src="index.js"></script>
+
 </body>
 </html>

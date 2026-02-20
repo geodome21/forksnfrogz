@@ -1,61 +1,97 @@
-// Your local games are just HTML files in the root (or a folder)
-const games = [
-  { title: "Deltarune", image: "images/Deltarune.png", file: "games/deltarune/index.html" },
-  { title: "Hollow Knight", image: "images/hollow knight.png", file: "games/Hollow Knight/index.html" },
-  { title: "Binding Of Issac", image: "images/BOF.png", file: "games/binding of issac/index.html" },
-  { title: "Game 4", image: "images/game4.png", file: "game4.html" },
-  { title: "Game 5", image: "images/game5.png", file: "game5.html" },
-];
+let tab="games"
+let cat="all"
 
-const grid = document.getElementById("gameGrid");
-const searchInput = document.getElementById("search");
-const viewer = document.getElementById("viewer");
-const frame = document.getElementById("gameFrame");
-const closeBtn = document.getElementById("closeViewer");
+const gameCategories=["all","action","rpg","puzzle"]
+const movieCategories=["all","comedy","horror","sci-fi"]
 
-// Render the grid
-function renderGames(filter = "") {
-  grid.innerHTML = "";
+const games=[
+{title:"Deltarune",img:"images/Deltarune.png",url:"games/delta.html",cat:"rpg"},
+{title:"Slope",img:"images/slope.png",url:"games/slope.html",cat:"action"}
+]
 
-  games
-    .filter(game => game.title.toLowerCase().includes(filter.toLowerCase()))
-    .forEach(game => {
-      const card = document.createElement("div");
-      card.className = "card";
+const movies=[
+{title:"Movie 1",img:"images/movie1.png",url:"movies/m1.html",cat:"comedy"}
+]
 
-      card.innerHTML = `
-        <img src="${game.image}" alt="${game.title}">
-        <div class="overlay">
-          <h2>${game.title}</h2>
-          <button class="play-btn">Play</button>
-        </div>
-      `;
-
-      grid.appendChild(card);
-
-      // Play button opens the game HTML in iframe
-      card.querySelector(".play-btn").addEventListener("click", () => {
-        openGame(game.file);
-      });
-    });
+function switchTab(t){
+tab=t
+cat="all"
+gamesTab.classList.remove("active")
+moviesTab.classList.remove("active")
+document.getElementById(t+"Tab").classList.add("active")
+loadCategories()
+render()
 }
 
-// Open game in iframe
-function openGame(file) {
-  frame.src = file;   // load the local HTML file
-  viewer.classList.remove("hidden");
+function loadCategories(){
+let cats=tab=="games"?gameCategories:movieCategories
+filterMenu.innerHTML=""
+cats.forEach(c=>{
+filterMenu.innerHTML+=`
+<div class="filter-option"
+onclick="setCat('${c}')">
+${c}
+</div>`
+})
 }
 
-// Close iframe
-closeBtn.addEventListener("click", () => {
-  frame.src = "";
-  viewer.classList.add("hidden");
-});
+function toggleFilter(){
+filterMenu.classList.toggle("show")
+}
 
-// Search functionality
-searchInput.addEventListener("input", (e) => {
-  renderGames(e.target.value);
-});
+function setCat(c){
+cat=c
+render()
+toggleFilter()
+}
 
-// Initial render
-renderGames();
+function render(){
+let list=tab=="games"?games:movies
+let s=search.value.toLowerCase()
+grid.innerHTML=""
+list.filter(x=>
+x.title.toLowerCase().includes(s)&&
+(cat=="all"||x.cat==cat)
+).forEach(x=>{
+grid.innerHTML+=`
+<div class="card"
+onclick="openGame('${x.url}')">
+<img src="${x.img}">
+<div class="overlay">
+<b>${x.title}</b>
+<button class="play">Play</button>
+</div>
+</div>`
+})
+}
+
+function openGame(u){
+player.style.display="flex"
+frame.src=u
+}
+
+function closeGame(){
+player.style.display="none"
+frame.src=""
+}
+
+function full(){
+frame.requestFullscreen()
+}
+
+function perf(x){
+if(x.checked)
+document.body.classList.add("lowPerf")
+else
+document.body.classList.remove("lowPerf")
+}
+
+document.addEventListener("keydown",e=>{
+if(e.key=="F6"){
+secret.style.display=
+secret.style.display=="block"?"none":"block"
+}
+})
+
+loadCategories()
+render()
