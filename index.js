@@ -1,7 +1,7 @@
 let tab="games"
 let cat="all"
 
-const gameCategories=["all","rpg","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer,"]
+const gameCategories=["all","rpg","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
@@ -14,15 +14,16 @@ const games=[
 {title:"Highway Racer",img:"images/Highway Racer.png",url:"games/highway racer/index.html",cat:"driving,"},
 {title:"Mario Kart 64",img:"images/Mario Kart 64.png",url:"games/Mario Kart 64/index.html",cat:"driving,"},
 {title:"Peggle",img:"images/peggle.jpg",url:"games/Peggle/index.html",cat:"puzzle,"},
+{title:"People Playground",img:"images/People Playground.png",url:"games/People Playground/index.html",cat:"Sandbox,"},
 {title:"Polytrack",img:"images/polytrack.jpeg",url:"games/Polytrack/index.html",cat:"driving,"},
 {title:"Retro Bowl",img:"images/retro bowl.jpeg",url:"games/Retro Bowl/index.html",cat:"Sports,"},
 {title:"Smash Karts",img:"images/Smash Karts.jpg",url:"games/Smash Karts/index.html",cat:"driving,multiplayer,"},
 {title:"Super Mario 64",img:"images/mayrio.jpeg",url:"games/Super Mario 64/index.html",cat:"Platformer,"},
-{title:"Super Smash Flash 2",img:"images/super smash flash 2.png",url:"games/Super Smash Flash 2/index.html",cat:"fighting,"},
+{title:"Super Smash Flash 2",img:"images/Super smash flash 2.png",url:"games/Super Smash Flash 2/index.html",cat:"fighting,"},
 {title:"SuperHot",img:"images/superhot.jpeg",url:"games/SuperHot/index.html",cat:"shooter,"},
 {title:"The Binding Of Issac",img:"images/BOI.png",url:"games/The Binding Of Issac/index.html",cat:"Horror,"},
 {title:"Time Shooter 2",img:"images/Time Shooter 2.jpg",url:"games/Time Shooter 2/index.html",cat:"shooter,"},
-{title:"Time Shooter 3",img:"images/time shooter 3.jpg",url:"games/time shooter 3/index.html",cat:"shooter,"}
+{title:"Time Shooter 3",img:"images/time shooter 3.jpg",url:"games/Time Shooter 3/index.html",cat:"shooter,"}
 ]
 
 const movies=[
