@@ -1,7 +1,7 @@
 let tab="games"
 let cat="all"
 
-const gameCategories=["all","rpg","puzzle","fighting","shooter","driving","Platformer","Sports","Horror",]
+const gameCategories=["all","rpg","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer,"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
@@ -14,6 +14,7 @@ const games=[
 {title:"Peggle",img:"images/peggle.jpg",url:"games/Peggle/index.html",cat:"puzzle,"},
 {title:"Polytrack",img:"images/polytrack.jpeg",url:"games/Polytrack/index.html",cat:"driving,"},
 {title:"Retro Bowl",img:"images/retro bowl.jpeg",url:"games/Retro Bowl/index.html",cat:"Sports,"},
+{title:"Smash Karts",img:"images/smash karts.jpg",url:"games/Smash Karts/index.html",cat:"driving,multiplayer,"},
 {title:"Super Mario 64",img:"images/mayrio.jpeg",url:"games/Super Mario 64/index.html",cat:"Platformer,"},
 {title:"SuperHot",img:"images/superhot.jpeg",url:"games/SuperHot/index.html",cat:"shooter,"},
 {title:"The Binding Of Issac",img:"images/BOI.png",url:"games/The Binding Of Issac/index.html",cat:"Horror,"},
