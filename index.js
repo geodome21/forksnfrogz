@@ -76,7 +76,6 @@ onclick="openGame('${x.url}')">
 <img src="${x.img}">
 <div class="overlay">
 <b>${x.title}</b>
-<button class="play">Play</button>
 </div>
 </div>`
 })
