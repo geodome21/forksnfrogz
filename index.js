@@ -1,7 +1,7 @@
 let tab="games"
 let cat="all"
 
-const gameCategories=["all","rpg","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox"]
+const gameCategories=["all","rpg","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
@@ -10,6 +10,7 @@ const games=[
 {title:"Drive Mad",img:"images/Drive Mad.png",url:"games/Drive Mad/index.html",cat:"driving,"},
 {title:"Escape Road",img:"images/Escape road.png",url:"games/Escape Road/index.html",cat:"driving,"},
 {title:"Escape Road 2",img:"images/escape road 2.jpeg",url:"games/Escape Road 2/index.html",cat:"driving,"},
+{title:"Friday Night Funkin",img:"images/Friday Night Funkin.png",url:"games/friday night funkin/index.html",cat:"rhythm,"},
 {title:"Golden eye 007",img:"images/Golden Eye 007.png",url:"games/Golden Eye 007/index.html",cat:"shooter,"},
 {title:"Highway Racer",img:"images/Highway Racer.png",url:"games/highway racer/index.html",cat:"driving,"},
 {title:"Mario Kart 64",img:"images/Mario Kart 64.png",url:"games/Mario Kart 64/index.html",cat:"driving,"},
