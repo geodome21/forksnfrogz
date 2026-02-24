@@ -14,6 +14,7 @@ const games=[
 {title:"Friday Night Funkin",img:"images/Friday Night Funkin.png",url:"games/friday night funkin/index.html",cat:"rhythm,"},
 {title:"Golden eye 007",img:"images/Golden Eye 007.png",url:"games/Golden Eye 007/index.html",cat:"shooter,"},
 {title:"Highway Racer",img:"images/Highway Racer.png",url:"games/highway racer/index.html",cat:"driving,"},
+{title:"Karlson",img:"images/Karlson.png",url:"games/Karlson/index.html",cat:"Platformer,shooter"},
 {title:"Mario Kart 64",img:"images/Mario Kart 64.png",url:"games/Mario Kart 64/index.html",cat:"driving,"},
 {title:"Peggle",img:"images/peggle.jpg",url:"games/Peggle/index.html",cat:"puzzle,"},
 {title:"People Playground",img:"images/People Playground.png",url:"games/People Playground/index.html",cat:"Sandbox,"},
