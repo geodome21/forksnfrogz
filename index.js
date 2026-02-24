@@ -103,12 +103,32 @@ function full(){
 frame.requestFullscreen()
 }
 
-// switch secret settings using period key instead of F6
+// FPS Counter
+let frameCount=0
+let lastTime=performance.now()
+let fps=0
+
+function updateFPS(){
+frameCount++
+const currentTime=performance.now()
+if(currentTime-lastTime>=1000){
+fps=frameCount
+frameCount=0
+lastTime=currentTime
+document.getElementById("fps-value").textContent=fps
+}
+requestAnimationFrame(updateFPS)
+}
+updateFPS()
+
+// Toggle secret menu with F6
 document.addEventListener("keydown",e=>{
-  if(e.key=="."){
-    secret.style.display=
-      secret.style.display=="block"?"none":"block";
-  }
-});
+if(e.key==="F6"){
+e.preventDefault()
+secret.style.display=
+secret.style.display==="block"?"none":"block"
+}
+})
+
 loadCategories()
 render()
