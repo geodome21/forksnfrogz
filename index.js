@@ -21,6 +21,7 @@ const games=[
 {title:"People Playground",img:"images/People Playground.png",url:"games/People Playground/index.html",cat:"Sandbox,"},
 {title:"Polytrack",img:"images/polytrack.jpeg",url:"games/Polytrack/index.html",cat:"driving,"},
 {title:"Retro Bowl",img:"images/retro bowl.jpeg",url:"games/Retro Bowl/index.html",cat:"Sports,"},
+{title:"Sandboxels",img:"images/Sandboxels.png",url:"games/Sandboxels/index.html",cat:"Sandbox,"},
 {title:"Smash Karts",img:"images/Smash Karts.jpg",url:"games/Smash Karts/index.html",cat:"driving,multiplayer,"},
 {title:"Super Mario 64",img:"images/mayrio.jpeg",url:"games/Super Mario 64/index.html",cat:"Platformer,"},
 {title:"Super Smash Flash 2",img:"images/Super smash flash 2.png",url:"games/Super Smash Flash 2/index.html",cat:"fighting,"},
