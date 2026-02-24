@@ -37,6 +37,12 @@ cat="all"
 gamesTab.classList.remove("active")
 moviesTab.classList.remove("active")
 document.getElementById(t+"Tab").classList.add("active")
+const credits=document.getElementById("credits")
+if(t==="movies"){
+credits.classList.add("show")
+}else{
+credits.classList.remove("show")
+}
 loadCategories()
 render()
 }
