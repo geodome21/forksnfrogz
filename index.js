@@ -1,7 +1,7 @@
 let tab="games"
 let cat="all"
 
-const gameCategories=["all","rpg","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm","simulator"]
+const gameCategories=["all","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm","simulator"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
@@ -18,6 +18,7 @@ const games=[
 {title:"Highway Racer",img:"images/Highway Racer.png",url:"games/highway racer/index.html",cat:"driving,"},
 {title:"Karlson",img:"images/Karlson.png",url:"games/Karlson/index.html",cat:"Platformer,shooter,"},
 {title:"Kirby 64",img:"images/Kirby 64.png",url:"games/Kirby 64/index.html",cat:"Platformer,"},
+{title:"Kour.io",img:"images/Kourio.png",url:"games/Kour.io/index.html",cat:"shooter,"},
 {title:"Mario Kart 64",img:"images/Mario Kart 64.png",url:"games/Mario Kart 64/index.html",cat:"driving,"},
 {title:"Peggle",img:"images/peggle.jpg",url:"games/Peggle/index.html",cat:"puzzle,"},
 {title:"People Playground",img:"images/People Playground.png",url:"games/People Playground/index.html",cat:"Sandbox,"},
