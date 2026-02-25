@@ -6,6 +6,7 @@ const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
 {title:"Bad Time Simulator",img:"images/Sans.jpeg",url:"games/Bad Time Simulator/index.html",cat:"fighting,"},
+{title:"Bitlife",img:"images/Bitlife.png",url:"games/Bitlife/index.html",cat:"simulator,"},
 {title:"Call Of Duty Black Ops",img:"images/Call Of Duty Black Ops.png",url:"games/Call Of Duty Black Ops/index.html",cat:"shooter,"},
 {title:"Candy Crush",img:"images/Candy Crush.png",url:"games/Candy Crush/index.html",cat:"puzzle,"},
 {title:"Doom 64",img:"images/Doom 64.png",url:"games/Doom 64/index.html",cat:"shooter,"},
