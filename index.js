@@ -7,6 +7,7 @@ const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
 {title:"1 on 1 soccar",img:"images/one on one soccar.png",url:"games/1 on 1 soccar/index.html",cat:"sports,"},
+{title:"1v1.lol",img:"images/1v1.lol.png",url:"games/1v1.lol/index.html",cat:"shooter,"},
 {title:"3Dash",img:"images/3Dash.png",url:"games/3Dash/index.html",cat:"rhythm,"},
 {title:"Age of War",img:"images/Age of War.png",url:"games/Age of War/index.html",cat:"strategy,"},
 {title:"Baseball Bros",img:"images/BaseBall Bros.png",url:"games/BaseBall Bros/index.html",cat:"sports,"},
@@ -30,7 +31,7 @@ const games=[
 {title:"Hollow Kight",img:"images/Hollow Knight.png",url:"games/Hollow Knight/index.html",cat:"platformer,"},
 {title:"Karlson",img:"images/Karlson.png",url:"games/Karlson/index.html",cat:"Platformer,shooter,"},
 {title:"Kirby 64",img:"images/Kirby 64.png",url:"games/Kirby 64/index.html",cat:"Platformer,"},
-{title:"Kour.io",img:"images/Kourio.png",url:"games/Kour.io/index.html",cat:"shooter,"},
+{title:"Kour.io",img:"images/Kourio.png",url:"games/Kour.io/index.html",cat:"shooter,multiplayer,"},
 {title:"Mario Kart 64",img:"images/Mario Kart 64.png",url:"games/Mario Kart 64/index.html",cat:"driving,"},
 {title:"Minecraft 1.8.8",img:"images/minecraft 1.8.8.png",url:"games/Minecraft 1.8.8/index.html",cat:"Sandbox,"},
 {title:"Peggle",img:"images/peggle.jpg",url:"games/Peggle/index.html",cat:"puzzle,"},
