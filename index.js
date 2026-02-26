@@ -1,5 +1,6 @@
 let tab="games"
 let cat="all"
+let searchTimeout
 
 const gameCategories=["all","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm","simulator"]
 const movieCategories=["all","comedy","horror","sci-fi"]
@@ -88,19 +89,65 @@ function render(){
 let list=tab=="games"?games:movies
 let s=search.value.toLowerCase()
 grid.innerHTML=""
-list.filter(x=>
+const filtered=list.filter(x=>
 x.title.toLowerCase().includes(s)&&
 (cat=="all"||x.cat.split(",").includes(cat))
-).forEach(x=>{
-grid.innerHTML+=`
-<div class="card"
-onclick="openGame('${x.url}')">
-<img src="${x.img}">
-<div class="overlay">
-<b>${x.title}</b>
-</div>
-</div>`
+)
+
+// Use DocumentFragment for better performance
+const fragment=document.createDocumentFragment()
+filtered.forEach(x=>{
+const card=document.createElement("div")
+card.className="card"
+card.onclick=()=>openGame(x.url)
+
+const img=document.createElement("img")
+img.src=""
+img.dataset.src=x.img
+img.loading="lazy"
+img.alt=x.title
+
+const overlay=document.createElement("div")
+overlay.className="overlay"
+overlay.innerHTML=`<b>${x.title}</b>`
+
+card.appendChild(img)
+card.appendChild(overlay)
+fragment.appendChild(card)
 })
+
+grid.appendChild(fragment)
+
+// Initialize lazy loading for images
+initializeLazyLoading()
+}
+
+// Lazy Loading with Intersection Observer
+function initializeLazyLoading(){
+if('IntersectionObserver' in window){
+const imageObserver=new IntersectionObserver((entries,observer)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+const img=entry.target
+if(img.dataset.src){
+img.src=img.dataset.src
+img.removeAttribute('data-src')
+observer.unobserve(img)
+}
+}
+})
+})
+
+const lazyImages=grid.querySelectorAll('img[data-src]')
+lazyImages.forEach(img=>imageObserver.observe(img))
+}else{
+// Fallback for browsers without IntersectionObserver
+const lazyImages=grid.querySelectorAll('img[data-src]')
+lazyImages.forEach(img=>{
+img.src=img.dataset.src
+img.removeAttribute('data-src')
+})
+}
 }
 
 function openGame(u){
@@ -146,3 +193,9 @@ secret.style.display==="block"?"none":"block"
 
 loadCategories()
 render()
+
+// Debounced search input for better performance
+document.getElementById('search').addEventListener('input',()=>{
+clearTimeout(searchTimeout)
+searchTimeout=setTimeout(()=>render(),250)
+})
