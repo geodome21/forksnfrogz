@@ -121,9 +121,11 @@ x.title.toLowerCase().includes(s)&&
 
 // Use DocumentFragment for better performance
 const fragment=document.createDocumentFragment()
+let cardIndex=0
 filtered.forEach(x=>{
 const card=document.createElement("div")
 card.className="card"
+card.style.setProperty('--card-index', cardIndex++)
 card.onclick=()=>openGame(x.url)
 
 const img=document.createElement("img")
