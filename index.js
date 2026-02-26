@@ -9,7 +9,7 @@ let lastTime=performance.now()
 let fps=0
 
 // Cache DOM elements for better performance
-let grid,filterMenu,search,frame,player,secret,gamesTab,moviesTab,fpsValue
+let grid,filterMenu,search,frame,player,secret,gamesTab,moviesTab,fpsValue,userCountDisplay
 
 function initializeDOMReferences(){
 grid=document.getElementById("grid")
@@ -21,6 +21,7 @@ secret=document.getElementById("secret")
 gamesTab=document.getElementById("gamesTab")
 moviesTab=document.getElementById("moviesTab")
 fpsValue=document.getElementById("fps-value")
+userCountDisplay=document.getElementById("userCount")
 }
 
 const gameCategories=["all","puzzle","fighting","shooter","driving","platformer","sports","horror","multiplayer","sandbox","rhythm","simulator","runner","clicker","rpg"]
@@ -316,6 +317,30 @@ fpsAnimationId=null
 }
 }
 
+// Live user count via WebSocket
+let userCountSocket
+function initUserCount(){
+// attempt to connect to WebSocket server on same host, default port 8080
+try{
+ const url=(location.protocol.startsWith('https')?'wss':'ws')+"://"+location.hostname+":8080"
+ userCountSocket=new WebSocket(url)
+ userCountSocket.onmessage=e=>{
+   try{
+     const data=JSON.parse(e.data)
+     if(userCountDisplay) userCountDisplay.textContent=`Users: ${data.count}`
+     const menu=document.getElementById('userCountMenu')
+     if(menu) menu.textContent=`Users: ${data.count}`
+   }catch(err){console.warn('invalid user count message',err)}
+ }
+ userCountSocket.onclose=()=>{
+   // try reconnect after delay
+   setTimeout(initUserCount,5000)
+ }
+}catch(e){
+ console.warn('user count socket failed',e)
+}
+}
+
 // Toggle secret menu with F6 and add Mac keyboard shortcuts
 document.addEventListener("keydown",e=>{
 if(e.key==="F6"){
@@ -344,6 +369,9 @@ switchTab("movies")
 initializeDOMReferences()
 loadCategories()
 render()
+
+// start live user count connection
+initUserCount()
 
 // Debounced search input for better performance
 document.getElementById('search').addEventListener('input',()=>{
