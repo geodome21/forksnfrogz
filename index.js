@@ -6,6 +6,7 @@ const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
 {title:"1 on 1 soccar",img:"images/one on one soccar.png",url:"games/1 on 1 soccar/index.html",cat:"sports,"},
+{title:"3Dash",img:"images/3Dash.png",url:"games/3Dash/index.html",cat:"rythm,"},
 {title:"Bad Time Simulator",img:"images/Sans.jpeg",url:"games/Bad Time Simulator/index.html",cat:"fighting,"},
 {title:"Bitlife",img:"images/Bitlife.png",url:"games/Bitlife/index.html",cat:"simulator,"},
 {title:"Call Of Duty Black Ops",img:"images/Call Of Duty Black Ops.png",url:"games/Call Of Duty Black Ops/index.html",cat:"shooter,"},
