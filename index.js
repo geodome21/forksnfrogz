@@ -39,7 +39,6 @@ document.documentElement.classList.add("macos-optimized")
 }
 
 const games=[
-{title:"1 on 1 soccar",img:"images/one on one soccar.png",url:"games/1 on 1 soccar/index.html",cat:"sports"},
 {title:"1v1.lol",img:"images/1v1.lol.png",url:"games/1v1.lol/index.html",cat:"shooter"},
 {title:"3Dash",img:"images/3Dash.png",url:"games/3Dash/index.html",cat:"rhythm"},
 {title:"Age of War",img:"images/Age of War.png",url:"games/Age of War/index.html",cat:"strategy"},
