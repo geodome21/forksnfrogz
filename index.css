@@ -160,15 +160,6 @@ backface-visibility:hidden;
 -webkit-backface-visibility:hidden;
 }
 
-#userCount{
-font-size:14px;
-color:var(--accent);
-}
-
-@media(max-width:768px){
-#userCount{display:none;} /* hide on mobile */
-}
-
 #grid.fade-out {
 animation: fadeOut 0.3s ease-in-out forwards;
 }
