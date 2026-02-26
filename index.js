@@ -10,6 +10,7 @@ const games=[
 {title:"1v1.lol",img:"images/1v1.lol.png",url:"games/1v1.lol/index.html",cat:"shooter,"},
 {title:"3Dash",img:"images/3Dash.png",url:"games/3Dash/index.html",cat:"rhythm,"},
 {title:"Age of War",img:"images/Age of War.png",url:"games/Age of War/index.html",cat:"strategy,"},
+{title:"Bad Monday Simulator",img:"images/Bad Monday Simulator.png",url:"games/Bad Monday Simulator/index.html",cat:"fighting,"},
 {title:"Baseball Bros",img:"images/BaseBall Bros.png",url:"games/BaseBall Bros/index.html",cat:"sports,"},
 {title:"Bad Time Simulator",img:"images/Sans.jpeg",url:"games/Bad Time Simulator/index.html",cat:"fighting,"},
 {title:"Bitlife",img:"images/Bitlife.png",url:"games/Bitlife/index.html",cat:"simulator,"},
