@@ -1,6 +1,7 @@
 let tab="games"
 let cat="all"
 let searchTimeout
+let performanceMode=false
 
 const gameCategories=["all","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm","simulator","runner","clicker"]
 const movieCategories=["all","comedy","horror","sci-fi"]
@@ -91,6 +92,10 @@ function toggleFilter(){
 filterMenu.classList.toggle("show")
 }
 
+function togglePerformanceMode(){
+performanceMode=document.getElementById("performanceMode").checked
+}
+
 function setCat(c){
 cat=c
 render()
@@ -135,31 +140,74 @@ initializeLazyLoading()
 }
 
 // Lazy Loading with Intersection Observer
-function initializeLazyLoading(){
-if('IntersectionObserver' in window){
-const imageObserver=new IntersectionObserver((entries,observer)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-const img=entry.target
-if(img.dataset.src){
-img.src=img.dataset.src
-img.removeAttribute('data-src')
-observer.unobserve(img)
-}
-}
-})
-})
+// helper that applies a 10‑second timeout and switches to text on failure
+function loadImageWithTimeout(img, src, title) {
+    // if performance mode is disabled, just load normally
+    if (!performanceMode) {
+        img.src = src;
+        return;
+    }
 
-const lazyImages=grid.querySelectorAll('img[data-src]')
-lazyImages.forEach(img=>imageObserver.observe(img))
-}else{
-// Fallback for browsers without IntersectionObserver
-const lazyImages=grid.querySelectorAll('img[data-src]')
-lazyImages.forEach(img=>{
-img.src=img.dataset.src
-img.removeAttribute('data-src')
-})
+    // start the timer before assigning src so it can be cancelled by load/error
+    const timeoutId = setTimeout(() => {
+        // timeout reached, abort loading and show title text
+        img.src = '';
+        handleImageTimeout(img, title);
+    }, 10000); // 10 seconds
+
+    img.addEventListener('load', () => {
+        clearTimeout(timeoutId);
+    });
+    img.addEventListener('error', () => {
+        clearTimeout(timeoutId);
+        handleImageTimeout(img, title);
+    });
+
+    img.src = src;
 }
+
+function handleImageTimeout(img, title) {
+    const card = img.parentElement;
+    if (!card) return;
+
+    // remove the broken/in-progress image
+    img.remove();
+
+    // if we've already inserted a text fallback, don't duplicate
+    if (card.querySelector('.no-img')) return;
+
+    const text = document.createElement('div');
+    text.className = 'no-img';
+    text.textContent = title;
+    card.insertBefore(text, card.firstChild);
+}
+
+function initializeLazyLoading(){
+    if('IntersectionObserver' in window){
+        const imageObserver=new IntersectionObserver((entries,observer)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    const img=entry.target
+                    if(img.dataset.src){
+                        // use our new loader with timeout
+                        loadImageWithTimeout(img, img.dataset.src, img.alt);
+                        img.removeAttribute('data-src')
+                        observer.unobserve(img)
+                    }
+                }
+            })
+        })
+
+        const lazyImages=grid.querySelectorAll('img[data-src]')
+        lazyImages.forEach(img=>imageObserver.observe(img))
+    }else{
+        // Fallback for browsers without IntersectionObserver
+        const lazyImages=grid.querySelectorAll('img[data-src]')
+        lazyImages.forEach(img=>{
+            loadImageWithTimeout(img, img.dataset.src, img.alt);
+            img.removeAttribute('data-src')
+        })
+    }
 }
 
 function openGame(u){
