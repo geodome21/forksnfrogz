@@ -34,6 +34,7 @@ const games=[
 {title:"Kour.io",img:"images/Kourio.png",url:"games/Kour.io/index.html",cat:"shooter,multiplayer,"},
 {title:"Mario Kart 64",img:"images/Mario Kart 64.png",url:"games/Mario Kart 64/index.html",cat:"driving,"},
 {title:"Minecraft 1.8.8",img:"images/minecraft1.8.8.png",url:"games/Minecraft 1.8.8/index.html",cat:"Sandbox,"},
+{title:"Nubbys Number Factory",img:"images/Nubbys Number Factory.png",url:"games/Nubbys Number Factory/index.html",cat:"Sandb,"},
 {title:"Peggle",img:"images/peggle.jpg",url:"games/Peggle/index.html",cat:"puzzle,"},
 {title:"Polytrack",img:"images/polytrack.jpeg",url:"games/Polytrack/index.html",cat:"driving,"},
 {title:"R.E.P.O",img:"images/REPO.png",url:"games/R.E.P.O/index.html",cat:"Horror,"},
