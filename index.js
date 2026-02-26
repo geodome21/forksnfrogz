@@ -54,7 +54,6 @@ const games=[
 {title:"Countmaster Stickman Games",img:"images/Countmaster Stickman Games.png",url:"games/Countmaster stickman games/index.html",cat:"runner"},
 {title:"Doom 64",img:"images/Doom 64.png",url:"games/Doom 64/index.html",cat:"shooter"},
 {title:"Douchebag Life",img:"images/DBL.png",url:"games/Douchebag life/index.html",cat:"simulator"},
-{title:"Douchebag Life",img:"images/DBL.png",url:"games/Douchebag life/index.html",cat:"simulator"},
 {title:"Dragon Ball Z legacy of goku",img:"images/Dragon Ball Z legacy of goku.png",url:"games/Dragon Ball Z legacy of goku/index.html",cat:"rpg"},
 {title:"Escape Road",img:"images/Escape road.png",url:"games/Escape Road/index.html",cat:"driving"},
 {title:"Escape Road 2",img:"images/escape road 2.jpeg",url:"games/Escape Road 2/index.html",cat:"driving"},
@@ -85,6 +84,7 @@ const games=[
 {title:"The Binding Of Issac",img:"images/BOI.png",url:"games/The Binding Of Issac/index.html",cat:"horror"},
 {title:"Time Shooter 2",img:"images/Time Shooter 2.jpg",url:"games/Time Shooter 2/index.html",cat:"shooter"},
 {title:"Time Shooter 3",img:"images/time shooter 3.jpg",url:"games/Time Shooter 3/index.html",cat:"shooter"},
+{title:"Ultrakill",img:"images/Ultrakill.png",url:"games/ultrakill/index.html",cat:"shooter"},
 {title:"We Become What We Behold",img:"images/We Become What We Behold.png",url:"games/We Become What We Behold/index.html",cat:"simulator"},
 {title:"You VS 100 Skibidi Toilets",img:"images/you vs 100 skibidi.png",url:"games/You vs 100 Skibidi/index.html",cat:"shooter"}
 ]
