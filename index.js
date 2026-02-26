@@ -36,7 +36,6 @@ const games=[
 {title:"Minecraft 1.8.8",img:"images/minecraft1.8.8.png",url:"games/Minecraft 1.8.8/index.html",cat:"Sandbox,"},
 {title:"Peggle",img:"images/peggle.jpg",url:"games/Peggle/index.html",cat:"puzzle,"},
 {title:"Polytrack",img:"images/polytrack.jpeg",url:"games/Polytrack/index.html",cat:"driving,"},
-{title:"Punch The Trump",img:"images/Punch The Trump.png",url:"games/Punch The Trump/index.html",cat:"fighting,"},
 {title:"Retro Bowl",img:"images/retro bowl.jpeg",url:"games/Retro Bowl/index.html",cat:"Sports,"},
 {title:"Smash Karts",img:"images/Smash Karts.jpg",url:"games/Smash Karts/index.html",cat:"driving,multiplayer,"},
 {title:"Snow Rider 3D",img:"images/Snow Rider 3D.png",url:"games/Snow Rider 3D/index.html",cat:"driving"},
