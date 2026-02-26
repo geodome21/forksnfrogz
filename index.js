@@ -73,7 +73,15 @@ credits.classList.add("show")
 credits.classList.remove("show")
 }
 loadCategories()
+
+// Add fade-out animation
+grid.classList.add("fade-out")
+
+// Wait for animation to complete, then render new content
+setTimeout(()=>{
+grid.classList.remove("fade-out")
 render()
+}, 300)
 }
 
 function loadCategories(){
