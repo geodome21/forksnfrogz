@@ -47,6 +47,7 @@ const games=[
 {title:"Bad Time Simulator",img:"images/Sans.jpeg",url:"games/Bad Time Simulator/index.html",cat:"fighting"},
 {title:"Bitlife",img:"images/Bitlife.png",url:"games/Bitlife/index.html",cat:"simulator"},
 {title:"Bridge Race",img:"images/Bridge Race.png",url:"games/Bridge Race/index.html",cat:"runner"},
+{title:"Build Now.gg",img:"images/Build Nowgg.png",url:"games/Build Now.gg/index.html",cat:"shooter"},
 {title:"Burgen Truck 201X",img:"images/Burgen Truck 201x.png",url:"games/Burgen Truck 201X/index.html",cat:"driving"},
 {title:"Call Of Duty Black Ops",img:"images/Call Of Duty Black Ops.png",url:"games/Call Of Duty Black Ops/index.html",cat:"shooter"},
 {title:"Candy Crush",img:"images/Candy Crush.png",url:"games/Candy Crush/index.html",cat:"puzzle"},
