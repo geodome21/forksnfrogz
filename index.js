@@ -2,7 +2,7 @@ let tab="games"
 let cat="all"
 let searchTimeout
 
-const gameCategories=["all","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm","simulator","runner"]
+const gameCategories=["all","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm","simulator","runner","clicker"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
@@ -40,6 +40,7 @@ const games=[
 {title:"Retro Bowl",img:"images/retro bowl.jpeg",url:"games/Retro Bowl/index.html",cat:"Sports,"},
 {title:"Smash Karts",img:"images/Smash Karts.jpg",url:"games/Smash Karts/index.html",cat:"driving,multiplayer,"},
 {title:"Snow Rider 3D",img:"images/Snow Rider 3D.png",url:"games/Snow Rider 3D/index.html",cat:"driving"},
+{title:"Spacebar Clicker",img:"images/Spacebar Clicker.png",url:"games/Spacebar Clicker/index.html",cat:"clicker"},
 {title:"Super Mario 64",img:"images/mayrio.jpeg",url:"games/Super Mario 64/index.html",cat:"Platformer,"},
 {title:"Super Smash Bros",img:"images/super smash bros.jpg",url:"games/Super Smash Bros/index.html",cat:"fighting,"},
 {title:"Super Smash Flash 2",img:"images/Super smash flash 2.png",url:"games/Super Smash Flash 2/index.html",cat:"fighting,"},
