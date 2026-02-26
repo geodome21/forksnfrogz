@@ -2,7 +2,7 @@ let tab="games"
 let cat="all"
 let searchTimeout
 
-const gameCategories=["all","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm","simulator"]
+const gameCategories=["all","puzzle","fighting","shooter","driving","Platformer","Sports","Horror","multiplayer","Sandbox","rhythm","simulator","runner"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
@@ -12,6 +12,7 @@ const games=[
 {title:"Bitlife",img:"images/Bitlife.png",url:"games/Bitlife/index.html",cat:"simulator,"},
 {title:"Call Of Duty Black Ops",img:"images/Call Of Duty Black Ops.png",url:"games/Call Of Duty Black Ops/index.html",cat:"shooter,"},
 {title:"Candy Crush",img:"images/Candy Crush.png",url:"games/Candy Crush/index.html",cat:"puzzle,"},
+{title:"Countmaster Stickman Games",img:"images/Countmaster Stickman Games.png",url:"games/Countmaster stickman games/index.html",cat:"runner,"},
 {title:"Doom 64",img:"images/Doom 64.png",url:"games/Doom 64/index.html",cat:"shooter,"},
 {title:"Douchebag Life",img:"images/DBL.png",url:"games/Douchebag life/index.html",cat:"simulator,"},
 {title:"Drive Mad",img:"images/Drive Mad.png",url:"games/Drive Mad/index.html",cat:"driving,"},
