@@ -148,7 +148,7 @@ initializeLazyLoading()
 }
 
 // Lazy Loading with Intersection Observer
-// helper that applies a 10‑second timeout and switches to text on failure
+// helper that applies a 5‑second timeout and switches to text on failure
 function loadImageWithTimeout(img, src, title) {
     // if performance mode is disabled, just load normally
     if (!performanceMode) {
@@ -161,7 +161,7 @@ function loadImageWithTimeout(img, src, title) {
         // timeout reached, abort loading and show title text
         img.src = '';
         handleImageTimeout(img, title);
-    }, 10000); // 10 seconds
+    }, 5000); // 5 seconds
 
     img.addEventListener('load', () => {
         clearTimeout(timeoutId);
