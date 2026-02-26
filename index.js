@@ -7,7 +7,8 @@ const movieCategories=["all","comedy","horror","sci-fi"]
 
 const games=[
 {title:"1 on 1 soccar",img:"images/one on one soccar.png",url:"games/1 on 1 soccar/index.html",cat:"sports,"},
-{title:"3Dash",img:"images/3Dash.png",url:"games/3Dash/index.html",cat:"rythm,"},
+{title:"3Dash",img:"images/3Dash.png",url:"games/3Dash/index.html",cat:"rhythm,"},
+{title:"Baseball Bros",img:"images/BaseBall Bros.png",url:"games/BaseBall Bros/index.html",cat:"sports,"},
 {title:"Bad Time Simulator",img:"images/Sans.jpeg",url:"games/Bad Time Simulator/index.html",cat:"fighting,"},
 {title:"Bitlife",img:"images/Bitlife.png",url:"games/Bitlife/index.html",cat:"simulator,"},
 {title:"Call Of Duty Black Ops",img:"images/Call Of Duty Black Ops.png",url:"games/Call Of Duty Black Ops/index.html",cat:"shooter,"},
@@ -21,9 +22,9 @@ const games=[
 {title:"Friday Night Funkin",img:"images/Friday Night Funkin.png",url:"games/friday night funkin/index.html",cat:"rhythm,"},
 {title:"Geometry Dash",img:"images/Geometry dash.png",url:"games/Geometry Dash/index.html",cat:"rhythm,"},
 {title:"Golden eye 007",img:"images/Golden Eye 007.png",url:"games/Golden Eye 007/index.html",cat:"shooter,"},
-{title:"Half Life",img:"images/Hollow Knight.png",url:"games/Hollow Knight/index.html",cat:"platformer,"},
+{title:"Half Life",img:"images/Half Life.png",url:"games/Half Life/index.html",cat:"shooter,"},
 {title:"Highway Racer",img:"images/Highway Racer.png",url:"games/highway racer/index.html",cat:"driving,"},
-{title:"Hollow Knight",img:"images/Highway Racer.png",url:"games/highway racer/index.html",cat:"driving,"},
+{title:"Hollow Kight",img:"images/Hollow Knight.png",url:"games/Hollow Knight/index.html",cat:"platformer,"},
 {title:"Karlson",img:"images/Karlson.png",url:"games/Karlson/index.html",cat:"Platformer,shooter,"},
 {title:"Kirby 64",img:"images/Kirby 64.png",url:"games/Kirby 64/index.html",cat:"Platformer,"},
 {title:"Kour.io",img:"images/Kourio.png",url:"games/Kour.io/index.html",cat:"shooter,"},
