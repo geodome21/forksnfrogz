@@ -25,7 +25,7 @@ userCountDisplay=document.getElementById("userCount")
 tooltip=document.getElementById("tooltip")
 }
 
-const gameCategories=["all","puzzle","fighting","shooter","driving","platformer","sports","horror","multiplayer","sandbox","rhythm","simulator","runner","clicker","rpg"]
+const gameCategories=["all","puzzle","fighting","shooter","driving","platformer","sports","horror","multiplayer","sandbox","rhythm","simulator","runner","clicker","rpg","survival"]
 const movieCategories=["all","comedy","horror","sci-fi"]
 
 // MacBook-specific optimizations
@@ -73,6 +73,7 @@ const games=[
 {title:"Half Life",img:"images/Half Life.png",url:"games/Half Life/index.html",cat:"shooter"},
 {title:"Highway Racer",img:"images/Highway Racer.png",url:"games/highway racer/index.html",cat:"driving"},
 {title:"Hollow Kight",img:"images/Hollow Knight.png",url:"games/Hollow Knight/index.html",cat:"platformer"},
+{title:"Hungry Knight",img:"images/Hungry Knight.png",url:"games/Hungry Knight/index.html",cat:"survival"},
 {title:"Karlson",img:"images/Karlson.png",url:"games/Karlson/index.html",cat:"platformer,shooter"},
 {title:"Kirby 64",img:"images/Kirby 64.png",url:"games/Kirby 64/index.html",cat:"platformer"},
 {title:"Kour.io",img:"images/Kourio.png",url:"games/Kour.io/index.html",cat:"shooter,multiplayer"},
