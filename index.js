@@ -62,6 +62,7 @@ const games=[
 {title:"Escape Road",img:"images/Escape road.png",url:"games/Escape Road/index.html",cat:"driving"},
 {title:"Escape Road 2",img:"images/escape road 2.jpeg",url:"games/Escape Road 2/index.html",cat:"driving"},
 {title:"Five Nights at Freddys",img:"images/five nights at freddys.png",url:"games/Five Nights at Freddys/index.html",cat:"horror"},
+{title:"Five Nights at Freddys 2",img:"images/five nights at freddys 2.png",url:"games/Five Nights at Freddys 2/index.html",cat:"horror"},
 {title:"Friday Night Funkin",img:"images/Friday Night Funkin.png",url:"games/friday night funkin/index.html",cat:"rhythm"},
 {title:"Geometry Dash",img:"images/Geometry dash.png",url:"games/Geometry Dash/index.html",cat:"rhythm"},
 {title:"Golden eye 007",img:"images/Golden Eye 007.png",url:"games/Golden Eye 007/index.html",cat:"shooter"},
