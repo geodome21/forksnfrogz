@@ -9,7 +9,7 @@ let lastTime=performance.now()
 let fps=0
 
 // Cache DOM elements for better performance
-let grid,filterMenu,search,frame,player,secret,gamesTab,moviesTab,fpsValue
+let grid,filterMenu,search,frame,player,secret,gamesTab,moviesTab,fpsValue,tooltip
 
 function initializeDOMReferences(){
 grid=document.getElementById("grid")
@@ -22,6 +22,7 @@ gamesTab=document.getElementById("gamesTab")
 moviesTab=document.getElementById("moviesTab")
 fpsValue=document.getElementById("fps-value")
 userCountDisplay=document.getElementById("userCount")
+tooltip=document.getElementById("tooltip")
 }
 
 const gameCategories=["all","puzzle","fighting","shooter","driving","platformer","sports","horror","multiplayer","sandbox","rhythm","simulator","runner","clicker","rpg"]
@@ -63,6 +64,7 @@ const games=[
 {title:"Escape Road 2",img:"images/escape road 2.jpeg",url:"games/Escape Road 2/index.html",cat:"driving"},
 {title:"Five Nights at Freddys",img:"images/five nights at freddys.png",url:"games/Five Nights at Freddys/index.html",cat:"horror"},
 {title:"Five Nights at Freddys 2",img:"images/five nights at freddys 2.png",url:"games/Five Nights at Freddys 2/index.html",cat:"horror"},
+{title:"Fortzone",img:"images/Fortzone.png",url:"games/Fortzone/index.html",cat:"shooter"},
 {title:"Friday Night Funkin",img:"images/Friday Night Funkin.png",url:"games/friday night funkin/index.html",cat:"rhythm"},
 {title:"Geometry Dash",img:"images/Geometry dash.png",url:"games/Geometry Dash/index.html",cat:"rhythm"},
 {title:"Golden eye 007",img:"images/Golden Eye 007.png",url:"games/Golden Eye 007/index.html",cat:"shooter"},

@@ -299,16 +299,26 @@ display:flex;
 /* anchor text to the bottom of the card */
 align-items:flex-end;
 justify-content:center;
-padding:12px 16px;
+padding:12px 0;
 transition:.3s;
 color:white;
 font-weight:bold;
 text-align:center;
-font-size:16px;
+font-size:20px;
+box-sizing:border-box;
 }
 
 .card:hover .overlay{
 opacity:1;
+}
+
+/* Bottom Screen Tooltip */
+.tooltip {
+    display: none;
+}
+
+.tooltip.show {
+    display: none;
 }
 
 /* fallback text for images that fail or time out */
