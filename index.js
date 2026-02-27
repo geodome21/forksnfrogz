@@ -58,7 +58,7 @@ const games=[
 {title:"Douchebag Life",img:"images/DBL.png",url:"games/Douchebag life/index.html",cat:"simulator"},
 {title:"Dragon Ball Z legacy of goku",img:"images/Dragon Ball Z legacy of goku.png",url:"games/Dragon Ball Z legacy of goku/index.html",cat:"rpg"},
 {title:"Drive Mad",img:"images/Drive Mad.png",url:"games/Drive Mad/index.html",cat:"driving"},
-{title:"Eagle Ride",img:"images/Eagle Ride.png",url:"games/Eagle Ride/index.html",cat:"runner"},
+{title:"Eagle Ride",img:"images/eagle ride.png",url:"games/Eagle Ride/index.html",cat:"runner"},
 {title:"Escape Road",img:"images/Escape road.png",url:"games/Escape Road/index.html",cat:"driving"},
 {title:"Escape Road 2",img:"images/escape road 2.jpeg",url:"games/Escape Road 2/index.html",cat:"driving"},
 {title:"Friday Night Funkin",img:"images/Friday Night Funkin.png",url:"games/friday night funkin/index.html",cat:"rhythm"},
